@@ -10,7 +10,7 @@ fn main() {
     let replaced = update_template(template, &arguments.template_name.value);
     let output_dir = Path::new(&arguments.output_dir.value);
     ensure_path(&output_dir);
-    let output_path = create_path(&output_dir, &arguments.input_template.value, &".tsx");
+    let output_path = create_path(&output_dir, &arguments.template_name.value, &".tsx");
     save_output(output_path, replaced);
 }
 
