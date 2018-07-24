@@ -1,23 +1,23 @@
  # Templates
 
- This program will take in any template file and a single word and output
- a file with that word inserted into the template.
+ This program will take in a Handlebars template file and prompt you for the values that should be used
+ to fill out the template
  
  
  ### Example
  #### Template
- ``` 
+ ``` handlebars
  import * as React from 'react'
  
- interface I{}State {
+ interface I{{component}}State {
  
  }
  
- interface I{}Props {
+ interface I{{component}}Props {
  
  }
  
- export default class {} extends React.Component<I{}Props, I{}State> {
+ export default class {{component}} extends React.Component<I{{component}}Props, I{{component}}State> {
      render() {
          return (
              <div>
@@ -27,10 +27,14 @@
  }
  ```
  #### Command
- `templates NewComponent -t ./path/to/template -o ./path/to/out/dir`
+ ```sh
+ $ templates ./path/to/template ./path/to/out/dir
+ Please provide the value for {{component}}
+ NewComponent
+ ```
  
- #### output
- ``` typescript
+ #### Output
+ ``` tsx
 import * as React from 'react'
  
  interface INewComponentState {
